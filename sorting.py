@@ -18,6 +18,14 @@ class Array:
         for i in range(len(self.values)):
             Array.full_array[self.lower_index + i] = values[i]
             self.plot()
+    
+    #New method added to get max value in array
+    def max(self):
+        m = self.values[0]
+        for i in range(1, len(self.values)):
+            if self.values[i]>m:
+                m = self.values[i]
+        return m
 
     def __init__(self, values, lower_index=0):
         self.lower_index = lower_index
@@ -41,6 +49,27 @@ class Array:
     def get_len(self):
         return len(self.values)
 
+#*********************************SOLUTION**********************************#
+
+def shell_sort(arr): 
+  
+    n = arr.get_len()
+    gap = n//2
+    while gap > 0: 
+  
+        for i in range(gap,n): 
+  
+            temp = arr.values[i] 
+
+            j = i 
+            while  j >= gap and arr.values[j-gap] >temp: 
+                arr.set(j, arr.values[j-gap]) 
+                j -= gap 
+        gap //= 2
+
+
+
+#*********************************SOLUTION END**********************************#
 
 def bubble_sort(nums):  # n^2
     # We set swapped to True so the loop looks runs at least once
@@ -212,3 +241,4 @@ def quick_sort(nums):  # n^2
             _quick_sort(items, split_index + 1, high)
 
     _quick_sort(nums, 0, nums.get_len() - 1)
+
