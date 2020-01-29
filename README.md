@@ -1,3 +1,5 @@
+SOLUTION - SHELL SORT ALGO ADDED
+
 # Sorting algorithm visualizer
 
 Visualizing sorting algorithms, using the matplotlib library.
